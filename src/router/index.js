@@ -5,6 +5,6 @@ import routes from "./router"
 Vue.use(VueRouter)
 
 export default new VueRouter({
-    mode:"hash",   // hash  history
+    mode:"history",   // hash  history
     routes
 })

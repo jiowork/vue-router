@@ -20,18 +20,23 @@ class VueRouter {
             // console.log(location.hash)  // #/
             window.addEventListener("load", () => {
                 this.history.current = location.hash.slice(1)
+                console.log("11111111")
             })
             window.addEventListener("hashchange", () => {
                 this.history.current = location.hash.slice(1)
+                console.log("22222222222")
             })
         } else {
             // 使用非hash路由，即history路由
             location.pathname ? "" : location.pathname = "/"
             window.addEventListener("load", () => {
                 this.history.current = location.pathname
+                console.log("33333333333")
             })
             window.addEventListener("popstate", () => {
                 this.history.current = location.pathname
+                console.log("4444444444444")
+                alert("okokok")
             })
         }
     }
@@ -42,7 +47,7 @@ class VueRouter {
     // ]
     createMap(routes) {
         // reduce方法 遍历数组的每一个元素，第一个参数初始值为空，通常用作累加器
-        // https://www.runoob.com/jsref/jsref-reduce.html
+        // 可以参考：  https://www.runoob.com/jsref/jsref-reduce.html
         return routes.reduce((memo, current) => {
             memo[current.path] = current.component
             return memo
